@@ -1,28 +1,35 @@
 const divide = (array, n) => {
-  let arr = array.split(" ").map(Number);
+  // Write your code here
+
   n = parseInt(n);
 
   let segment = [],
-    temp = [],
-    sum = 0;
+    i = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (sum + arr[i] > n) {
-      segment.push(temp);
-      temp = [];
-      sum = 0;
-    }
-
-    sum += arr[i];
-    temp.push(arr[i]);
-  }
-
-  if (temp.length > 0) {
-    segment.push(temp);
+  while (i < arr.length) {
+    let temp = subArray(arr, i, n);
+    segment.push(temp[0]);
+    i = temp[1];
   }
 
   return segment;
 };
+
+function subArray(arr, index, maxSum) {
+  let subArray = [],
+    sum = 0;
+
+  while (index < arr.length) {
+    if (arr[index] + sum > maxSum) {
+      break;
+    }
+    subArray.push(arr[index]);
+    sum += arr[index];
+    index++;
+  }
+
+  return [subArray, index];
+}
 
 const arr = prompt("Enter an array of numbers which are space separated: ");
 const n = parseInt(prompt("Enter n: "));
