@@ -1,8 +1,30 @@
-const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+const divide = (array, n) => {
+  let arr = array.split(" ").map(Number);
+  n = parseInt(n);
 
-const divide = (arr, n) => {
-  // Write your code here
+  let segment = [],
+    temp = [],
+    sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (sum + arr[i] > n) {
+      segment.push(temp);
+      temp = [];
+      sum = 0;
+    }
+
+    sum += arr[i];
+    temp.push(arr[i]);
+  }
+
+  if (temp.length > 0) {
+    segment.push(temp);
+  }
+
+  return segment;
 };
 
-const n = prompt("Enter n: ");
+const arr = prompt("Enter an array of numbers which are space separated: ");
+const n = parseInt(prompt("Enter n: "));
+
 alert(JSON.stringify(divide(arr, n)));
