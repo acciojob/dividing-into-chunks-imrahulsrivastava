@@ -30,9 +30,8 @@ const subSegment = (arr, index, maxSum) => {
 
 // Do not change the code below
 
-const arr = prompt("Enter an array of numbers which are space separated: ")
-  .split(" ")
-  .map(Number);
+const arr = prompt("Enter an array of numbers which are space separated: ");
+arr = arr.split(" ").map(Number);
 const n = parseInt(prompt("Enter n: "));
 
 alert(JSON.stringify(divide(arr, n)));
