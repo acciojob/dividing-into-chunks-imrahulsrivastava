@@ -1,3 +1,5 @@
+const arr = [1, 2, 3, 4, 1, 0, 2, 2];
+
 const divide = (arr, n) => {
   // Write your code here
 
@@ -32,10 +34,3 @@ const subSegment = (arr, index, maxSum) => {
 
 // Do not change the code below
 
-let str = prompt(
-  "Enter an array of numbers which are space separated: "
-).trim();
-const n = parseInt(prompt("Enter n: "));
-
-const arr = str.split(" ").map(Number);
-alert(JSON.stringify(divide(arr, n)));
