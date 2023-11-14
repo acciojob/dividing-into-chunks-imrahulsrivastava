@@ -1,7 +1,5 @@
-const divide = (array, n) => {
+const divide = (arr, n) => {
   // Write your code here
-
-  let arr = array.split(" ").map(Number);
 
   const segments = [];
   let i = 0;
