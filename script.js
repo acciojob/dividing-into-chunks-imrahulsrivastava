@@ -26,6 +26,7 @@ const subSegment = (arr, index, maxSum) => {
     subSegment.push(arr[index]);
     sum += arr[index];
     index++;
+    if (sum === maxSum) break;
   }
 
   return subSegment;
