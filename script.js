@@ -1,12 +1,9 @@
-const divide = (arr, n) => {
-  // Write your code here
-
-  arr = arr.map(Number);
+const divide = (array, n) => {
   const segments = [];
   let i = 0;
 
-  while (i < arr.length) {
-    const temp = subSegment(arr, i, n);
+  while (i < array.length) {
+    const temp = subSegment(array, i, n);
     segments.push(temp);
     i += temp.length;
   }
@@ -33,7 +30,9 @@ const subSegment = (arr, index, maxSum) => {
 
 // Do not change the code below
 
-const arr = prompt("Enter an array of numbers which are space separated: ");
+const arr = prompt("Enter an array of numbers which are space separated: ")
+  .split(" ")
+  .map(Number);
 const n = parseInt(prompt("Enter n: "));
 
 alert(JSON.stringify(divide(arr, n)));
